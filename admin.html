@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إدارة الكافيه</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>لوحة إدارة الكافيه</h1>
+        </header>
+
+        <div class="admin-tabs">
+            <button class="tab-btn active" data-tab="orders">الطلبات</button>
+            <button class="tab-btn" data-tab="menu">إدارة المنيو</button>
+        </div>
+
+        <div class="tab-content" id="ordersTab">
+            <h2>الطلبات الحالية</h2>
+            <div class="orders-list" id="ordersList">
+                <!-- سيتم ملؤها بالجافاسكريبت -->
+            </div>
+        </div>
+
+        <div class="tab-content hidden" id="menuTab">
+            <h2>إدارة قائمة الطعام</h2>
+            
+            <div class="add-item-form">
+                <h3>إضافة صنف جديد</h3>
+                <input type="text" id="itemName" placeholder="اسم الصنف">
+                <select id="itemCategory">
+                    <option value="hot">مشروبات ساخنة</option>
+                    <option value="cold">مشروبات باردة</option>
+                    <option value="food">وجبات</option>
+                </select>
+                <input type="number" id="itemPrice" placeholder="السعر (ج.م)">
+                <button id="addItemBtn">إضافة</button>
+            </div>
+
+            <div class="menu-items-list">
+                <h3>الأصناف الحالية</h3>
+                <div class="menu-items-admin" id="menuItemsAdmin">
+                    <!-- سيتم ملؤها بالجافاسكريبت -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
